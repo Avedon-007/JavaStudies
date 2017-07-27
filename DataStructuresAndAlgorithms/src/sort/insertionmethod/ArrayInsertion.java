@@ -33,10 +33,11 @@ public class ArrayInsertion
 	*	   _______________outer_loop___________
 	*	   |        						   |
 	*	12 5 31 548 2 21 6 13 21 26 56 73 1 85 3
-	*	|  |_marker -->						   |
-	*	|______________________________________|
-	*	   				inner loop
-	*	   				   <--
+	*	|  |_marker -->						   
+	*	|  |
+	*	|__|increasing with marker
+	*	inner loop
+	*	  <--
 	*	   	
 	*/	
 	
