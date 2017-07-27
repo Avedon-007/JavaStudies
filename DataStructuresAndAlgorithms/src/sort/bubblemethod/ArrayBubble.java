@@ -21,12 +21,12 @@ public class ArrayBubble
 	{
 		for(int i = 0; i < numberOfElems; i++)
 			System.out.print(arr[i] + " ");
-		System.out.println();				// move cursor for the new line
+		System.out.println();				// move cursor to the new line
 	}
 //-----------------------------------------------------------------------------------------------------
 /*					   <--
 *	   _____________outer_loop______________
-*	   |									|
+*	   |								   |
 *	12 5 31 548 2 21 6 13 21 26 56 73 1 85 3	
 *	|______________________________________|
 *	   				inner loop

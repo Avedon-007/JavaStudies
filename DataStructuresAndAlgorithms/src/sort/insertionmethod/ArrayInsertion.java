@@ -1,12 +1,12 @@
-package sort.selectmethod;
+package sort.insertionmethod;
 
-public class ArraySelect
+public class ArrayInsertion 
 {
 	private long[] arr;
 	private int numberOfElems;
 
 // -----------------------------------------------------------------------------------------------------
-	public ArraySelect(int max)				// constructor
+	public ArrayInsertion(int max)				// constructor
 	{
 		arr = new long[max];				// create new array
 		numberOfElems = 0;					// not any elements yet
@@ -29,34 +29,30 @@ public class ArraySelect
 
 // -----------------------------------------------------------------------------------------------------
 	
-/*					-->
-*	_______________outer_loop___________
-*	|									|
-*	12 5 31 548 2 21 6 13 21 26 56 73 1 85 3
-*	   |___________________________________|
-*	   				inner loop
-*	   				   -->
-*	   	
-*/	
-	public void selectionSort() 
-	{																										
-		int out, in, min;
-		for(out = 0; out < numberOfElems-1; out++)		// outer loop
-		{			
-			min = out;									// sets the minimum
-			for(in = out+1; in < numberOfElems; in++)	// inner loop searches the minimum
-				if(arr[in] < arr[min])
-					min = in;
-			swap(out, min); // swap two elements
-		}
-		
-	}
-
-// -----------------------------------------------------------------------------------------------------
-	private void swap(int first, int second) 
+	/*					    -->
+	*	   _______________outer_loop___________
+	*	   |        						   |
+	*	12 5 31 548 2 21 6 13 21 26 56 73 1 85 3
+	*	|  |_marker -->						   |
+	*	|______________________________________|
+	*	   				inner loop
+	*	   				   <--
+	*	   	
+	*/	
+	
+	public void insertionSort()
 	{
-		long temp = arr[first];
-		arr[first] = arr[second];
-		arr[second] = temp;
+		int in, out;
+		for(out = 1; out < numberOfElems; out++)
+		{
+			long temp = arr[out];
+			in = out;
+			while(in > 0 && arr[in-1] >= temp)
+			{
+				arr[in] = arr[in-1];
+				--in;
+			}
+		arr[in] = temp;	
+		}
 	}
 }
